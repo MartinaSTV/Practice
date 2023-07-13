@@ -21,6 +21,7 @@ function AddTodo (){
     let getTodos = useSelector( (state:State) => { return state.Todo})
     console.log(getTodos)
     let id = uuid()
+    let idInput = id + '3'
     let dispatch = useDispatch()
 
     let [inputValueTitle , setInput] = useState('');
@@ -38,8 +39,8 @@ function AddTodo (){
     return(
         <section className='addtodo'>
             <article className='addtodo__titleInput'>
-                <label htmlFor="title" className='addtodo__title'>Lägg till titel på lista</label >
-                <input type="text" className='addtodo__input' id='title' placeholder="Titel" onChange={ (e)=>{ setInput(e.target.value)} }/>
+                <label htmlFor={ idInput } className='addtodo__title'>Lägg till titel på lista</label >
+                <input type="text" className='addtodo__input' id={ idInput } placeholder="Titel" onChange={ (e)=>{ setInput(e.target.value)} }/>
             </article>
             <button className='addtodo__button' onClick={ saveLists }>Spara Lista</button>
         </section>
