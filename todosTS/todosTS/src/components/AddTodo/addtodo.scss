@@ -1,0 +1,36 @@
+.addtodo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    border-radius: 5px;
+    padding: 1rem;
+    color: black;
+    background-color: white;
+    max-width: 20rem;
+
+    &__button{
+        margin: 1rem;
+        background-color: #13005A;
+        color: white;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 2px;
+        width: 100%;
+        box-shadow: 1px 1px 1px ;
+    }
+    &__button:hover{
+        background-color: #03C988 ;
+    }
+    &__titleInput{
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8rem;
+        width: 100%;
+        font-weight: 600;
+        color: #03C988;
+    }
+    &__input{
+        margin-top: 0.3rem;
+    }
+}
