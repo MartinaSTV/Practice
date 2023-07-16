@@ -30,10 +30,10 @@ function addTodo(todo: ToDo ){
         payload: todo
     }
 }
-function removeTodoList(todo: string){
+function removeTodoList(list: ToDoList){
     return{
         type: 'REMOVE_TODO',
-        payload: todo
+        payload: list
     }
 }
 function updateTodo(todo: ToDo){

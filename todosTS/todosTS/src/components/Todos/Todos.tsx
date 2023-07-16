@@ -22,6 +22,8 @@ function TodoList(props: TodoProps){
     let IDS = ID+ '1'
   
    let [inputValueText, setText] = useState('');
+
+   let [todoo , settodoo]= useState <ToDo>()
  
    let todo:ToDo = {
        text: inputValueText,
@@ -30,6 +32,7 @@ function TodoList(props: TodoProps){
    }
 
    function addToDos(){
+      settodoo(todo)
       props.todoList.todos.push(todo)
       dispatch(addTodo(todo))// Test
    }
@@ -49,7 +52,7 @@ function TodoList(props: TodoProps){
             <label htmlFor={ IDS } className="todos__label">Lägg till ToDo</label>
             <input type="text" className="todos__input" id={ IDS } placeholder=" Lägg till Todo" onChange={ (e)=>{ setText(e.target.value)} }/> 
             <button className="todos__button" onClick={ addToDos }>Add ToDo</button>
-            <article className="todos__items">{ items.length > 0? items: <p>Du har inga Todos att göra</p> }</article>
+            <article className="todos__items">{ items.length > 0? items: <p className="todo__items">Du har inga Todos att göra</p> }</article>
         </section>
     )
 }

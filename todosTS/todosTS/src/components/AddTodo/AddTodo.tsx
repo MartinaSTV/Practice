@@ -16,25 +16,28 @@ interface ToDoList{
     todos: ToDo[],
 }
 
-function AddTodo (){
+function AddTodo (){ 
 
     let getTodos = useSelector( (state:State) => { return state.Todo})
-    console.log(getTodos)
+ 
     let id = uuid()
     let idInput = id + '3'
     let dispatch = useDispatch()
 
     let [inputValueTitle , setInput] = useState('');
+    let [todos, settodos] = useState <ToDo[]>([])
   
  
     let todoList: ToDoList = {
         title: inputValueTitle,
         id: id,
-        todos: []
+        todos: todos
     }
 
     function saveLists(){
+        settodos(getTodos)
         dispatch(addTodoList(todoList))
+        settodos([])
     }
     return(
         <section className='addtodo'>
