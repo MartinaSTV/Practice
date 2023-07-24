@@ -2,7 +2,7 @@ import './addtodo.scss';
 import {  useState } from "react";
 import uuid from 'uuid-random';
 import { useDispatch, useSelector} from 'react-redux';
-import { addTodoList } from '../../Actions/Action';
+import { addTodoList, updateTodo } from '../../Actions/Action';
 import { State } from '../../Reducer/Reducer';
 
 interface ToDo{
@@ -18,14 +18,16 @@ interface ToDoList{
 
 function AddTodo (){ 
 
-    let getTodos = useSelector( (state:State) => { return state.Todo})
+    //let getTodos = useSelector( (state:State) => { return state.Todo})
+    //console.log(getTodos)
  
     let id = uuid()
     let idInput = id + '3'
     let dispatch = useDispatch()
 
     let [inputValueTitle , setInput] = useState('');
-    let [todos, settodos] = useState <ToDo[]>([])
+    let [todos, settodos] = useState <ToDo[]>([]);
+    //console.log(todos)
   
  
     let todoList: ToDoList = {
@@ -33,10 +35,12 @@ function AddTodo (){
         id: id,
         todos: todos
     }
+    console.log(todoList)
 
     function saveLists(){
-        settodos(getTodos)
+     
         dispatch(addTodoList(todoList))
+        //dispatch(updateTodo(getTodos))
         settodos([])
     }
     return(

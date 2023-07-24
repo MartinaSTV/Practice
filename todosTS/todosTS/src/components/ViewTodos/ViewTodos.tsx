@@ -14,7 +14,7 @@ function ViewTodoLists(){
     
     return(
         <section className='viewtodos'>
-            <section className='viewtodos__elem'>{ todoElem.length >0? todoElem: <p>Du har inga Todo Listor</p> }</section>
+            <section className='viewtodos__elem'>{ todoElem.length >0? todoElem: <p className='viewtodos__text'>Du har inga Todo Listor</p> }</section>
         </section>
     )
 }

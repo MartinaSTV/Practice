@@ -24,9 +24,11 @@ const reducer = (state = initialState, action: Actions) => {
             }
 
         case 'REMOVE_TODOLIST':
-            
-            const NewTodoList= [...state.TodoList]
-       
+        
+            let removeList =  state.TodoList.findIndex((list) => list.id === action.payload)
+            const NewTodoList = [...state.TodoList]
+            NewTodoList.splice(removeList, 1)
+           
 
             return{
                 ...state,

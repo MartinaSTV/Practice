@@ -22,7 +22,6 @@ function TodoList(props: TodoProps){
     let IDS = ID+ '1'
   
    let [inputValueText, setText] = useState('');
-
    let [todoo , settodoo]= useState <ToDo>()
  
    let todo:ToDo = {
@@ -34,11 +33,12 @@ function TodoList(props: TodoProps){
    function addToDos(){
       settodoo(todo)
       props.todoList.todos.push(todo)
-      dispatch(addTodo(todo))// Test
+      //dispatch(addTodo(todo))// Test
    }
 
    function removelist(){
      dispatch(removeTodoList(props.todoList.id))
+     console.log(props.todoList.id)
    }
 
     let items = props.todoList.todos.map((item)=>{
